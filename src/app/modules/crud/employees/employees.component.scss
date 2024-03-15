@@ -1,0 +1,117 @@
+.team-section {
+    background-color: #f4f4f4; // Light grey background for better contrast
+    padding: 40px;
+    text-align: center;
+  
+    .team-section-title {
+      margin-bottom: 30px;
+      color: #333; // Dark grey for text
+      font-size: 2rem; // Bigger font size for the title
+      font-weight: 300; // Lighter font weight for modern aesthetic
+    }
+  
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; // Distributes space around items for even spacing
+      align-items: stretch; // Stretches items to fill the container height
+      gap: 30px;
+    }
+  
+    .team-member-card {
+      display: flex;
+      flex-direction: column; // Stack children vertically
+      justify-content: space-between; // Distributes space between items inside the card
+      width: 250px; // Fixed width for cards
+      background-color: #ffffff;
+      border-radius: 12px; // Rounded corners for card
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+  
+      .team-member-photo {
+        width: 100px; // Size for the photo
+        height: 100px;
+        border-radius: 50%; // Circle shape
+        overflow: hidden;
+        margin: 0 auto; // Center the image
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+  
+      .team-member-info {
+        text-align: center; // Center align text
+        padding: 10px 0; // Padding top and bottom
+  
+        .team-member-role {
+          font-size: 0.85rem;
+          color: #666;
+        }
+  
+        .team-member-name {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #333;
+        }
+  
+        .team-member-bio {
+          font-size: 0.8rem;
+          color: #666;
+        }
+      }
+  
+      .team-member-actions {
+        display: flex;
+        justify-content: space-evenly;
+  
+        button {
+          background: none;
+          border: none;
+          padding: 0;
+          margin: 0;
+          cursor: pointer;
+          transition: color 0.2s ease;
+  
+          &:hover {
+            color: #0056b3; // Highlight color on hover
+          }
+        }
+      }
+    }
+  
+    .add-employee-button {
+      margin-top: 30px;
+      button {
+        background-color: #bdd248; // A shade of blue
+        color: white; // White text to stand out against the blue background
+      
+        &:hover {
+          background-color: darken(#bdd248, 10%); // A darker blue on hover for a button press effect
+        }
+      }
+    }
+    .team-filter {
+      margin-top: 30px;
+    }
+  }
+  
+  .mat-paginator {
+    margin-top: 30px;
+    background-color: transparent;
+    color: #333;
+  }
+  .circular-image {
+    width: 100px; /* Définissez la taille souhaitée pour l'image */
+    height: 100px;
+    border-radius: 50%; /* Rend l'image circulaire */
+    object-fit: cover; /* Empêche l'image de se déformer */
+  }

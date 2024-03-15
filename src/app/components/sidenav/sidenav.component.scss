@@ -1,0 +1,58 @@
+:host {
+    transition: all 500ms ease-in-out;
+  }
+  
+  .sidenav-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    flex-grow: 0; // Default state, not taking up extra space
+  
+  
+    img {
+      padding: 5px 5px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 5px;
+    }
+  
+    .header-text {
+      display: flex;
+      flex-direction: column;
+  
+      h2, h4 {
+        margin: 0;
+      }
+  
+      h2 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+  
+      h4 {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  
+  .collapsed .sidenav-header {
+    flex-grow: 1; // Take up extra space to center the image in collapsed state
+    justify-content: center; // Center the content vertically
+  }
+  
+  .hide-header-text {
+    opacity: 0;
+    height: 0;
+  }
+  .custom-icon {
+    color: #1b1b19!important; /* Change this to your desired icon color */
+  }
+  
+  .custom-label {
+    color: #1b1b19!important; /* Change this to your desired label color */
+  }
+  .nav-list{
+    background-color: #bdd248!important;
+  }

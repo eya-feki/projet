@@ -1,0 +1,49 @@
+<div class="team-section">
+    <h2 class="team-section-title">Rencontrer l'équipe</h2>
+     <!-- Filter Form Field -->
+     <div class="team-filter">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+    </div>
+    <div class="team-grid">
+      <!-- Repeat this block for each team member using *ngFor in Angular -->
+      <div class="team-member-card" *ngFor="let member of dataSource?.filteredData">
+        <div *ngIf="member.employeeImages?.[0] as empImage; else defaultImage">
+          <img [src]="getImageUrl(empImage)" alt="{{ member.firstname }} {{ member.lastname }}" class="circular-image">
+        </div>
+        <ng-template #defaultImage>
+          <img src="path_to_default_image" alt="Default Image">
+        </ng-template>
+        <div class="team-member-info">
+          <p class="team-member-role">{{ member.team.name }}</p>
+          <h3 class="team-member-name">{{ member.firstname }} {{ member.lastname }}</h3>
+          <p class="team-member-bio">{{ member.email }}</p>
+          <div class="team-member-socials">
+            <!-- Insert social media icons here -->
+          </div>
+        </div>
+        <!-- Conditionally display action buttons for admins -->
+        <div class="team-member-actions" *ngIf="roles.includes('ROLE_ADMIN')">
+          <button mat-icon-button color="primary" (click)="openEditForm(member)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteEmployee(member.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <!-- End of ngFor block -->
+    </div>
+    <!-- Add Employee Button -->
+    <div *ngIf="roles.includes('ROLE_ADMIN')" class="add-employee-button">
+      <button mat-fab (click)="openAddEditEmpForm()" class="color">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  
+    <!-- Paginator -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 25, 100]"></mat-paginator>
+  </div>
+  
